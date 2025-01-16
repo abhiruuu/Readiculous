@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* border: 1px solid red; */
+}
+
+:root {
+  --color-sidebar: #efefef;
+  --accent-color: #da4a54;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* -------------------------------- */
+.app {
+  display: grid;
+
+  grid-template-columns: 20vw 1fr;
+}
+
+/* ---------------------------------- */
+.sidebar {
+  height: 100vh;
+  background-color: var(--color-sidebar);
+
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+}
+
+.logo__img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+
+  margin-right: 5px;
+}
+
+.logo__text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.profile {
+  user-select: none;
+  border-radius: 10px;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+
+  box-shadow: 2px 7px 10px #d4d4d4;
+  transition: all 0.2s;
+
+  cursor: pointer;
+}
+
+.profile:hover {
+  background-color: #e4e4e4;
+}
+
+.profile__img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.text-container {
+  margin-right: 6px;
+  margin-left: 12px;
+}
+
+.profile__name {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.profile__subtitle {
+  color: rgb(134, 134, 134);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.library-option {
+  user-select: none;
+  cursor: pointer;
+  padding-left: 35px;
+  height: 50px;
+  margin-top: 40px;
+  background-color: var(--accent-color);
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.library-option:hover {
+  background-color: #c0424b;
+}
+
+.library__icon {
+  margin-right: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.library__text {
+  margin-left: 6px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+small {
+  font-weight: 300;
+  color: #9e9e9e;
+}
+
+/* ---------------------------------- */
+.library {
+  user-select: none;
+  height: 100vh;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.library__heading {
+  display: flex;
+}
+.library__title {
+  font-size: 30px;
+}
+
+.library__arrow i {
+  height: 1.2em;
+  width: 1.2em;
+
+  padding-left: 2px;
+  padding-top: 1.5px;
+
+  border-radius: 50%;
+
+  margin-top: 15px;
+  margin-left: 16px;
+
+  transition: all 0.2s;
+}
+
+.library__arrow i:hover {
+  background-color: #e7e7e7;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.button-area {
+  user-select: none;
+  margin-left: auto;
+  display: flex;
+}
+
+.add-button {
+  color: white;
+  background-color: var(--accent-color);
+
+  width: 35px;
+  height: 35px;
+  border-radius: 25%;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.add-button:hover {
+  background-color: #c0424b;
+}
+
+.button__text {
+  margin-top: 3px;
+  margin-left: 7px;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  height: 565px;
+}
+
+.card {
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 220px;
+  height: 230px;
+  border-radius: 25px;
+
+  padding: 20px;
+  margin-right: 13px;
+  margin-top: 13px;
+  text-align: center;
+  cursor: pointer;
+
+  color: white;
+  background-color: var(--accent-color);
+
+  transition: all 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 2px 10px 20px #b8b8b8;
+  background-color: #d54952;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 600;
+
+  margin-top: -30px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card__author {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.card__pages {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.card__readStatus {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* --------------------------------------- */
