@@ -1,7 +1,10 @@
 const myBooks = [];
-const btn = document.querySelector(".button-area");
+const btn = document.querySelector(".add-button");
 
 const cardArea = document.querySelector(".card-area");
+
+const bookFormContainer = document.querySelector(".book-form-container");
+const bookForm = document.querySelector("#book-form");
 
 function Book(title, author, pages, readStatus) {
   this.title = title;
@@ -18,8 +21,10 @@ function addBookToLibrary(title, author, pages, readStatus) {
 function clearCardArea() {
   cardArea.innerHTML = " ";
 }
+clearCardArea();
 
 function displayBooks() {
+  clearCardArea();
   for (let i = 0; i < myBooks.length; i++) {
     const card = document.createElement("section");
     card.classList.add("card");
@@ -31,9 +36,24 @@ function displayBooks() {
   }
 }
 
-clearCardArea();
-addBookToLibrary("Book Title 1", "Full Name", "500", "Not Completed");
-addBookToLibrary("Book Title 2", "Full Name", "300", "Completed");
-addBookToLibrary("Book Title 3", "Full Name", "200", "Completed");
+btn.addEventListener("click", () => {
+  bookFormContainer.style.display = "flex";
+});
 
-displayBooks();
+bookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+  const readStatus = document.querySelector("#readStatus").value;
+
+  addBookToLibrary(title, author, pages, readStatus);
+
+  bookForm.reset();
+  bookFormContainer.style.display = "none";
+
+  displayBooks();
+
+  console.log(cardArea);
+});
