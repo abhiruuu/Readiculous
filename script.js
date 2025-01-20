@@ -1,6 +1,6 @@
 const myBooks = [];
 const btn = document.querySelector(".add-button");
-
+const card = document.querySelector(".card");
 const cardArea = document.querySelector(".card-area");
 
 const bookFormContainer = document.querySelector(".book-form-container");
@@ -28,11 +28,21 @@ function displayBooks() {
   for (let i = 0; i < myBooks.length; i++) {
     const card = document.createElement("section");
     card.classList.add("card");
-    card.innerHTML = `<p class="card__title">${myBooks[i].title}</p>
+    card.innerHTML = `<div class="card-content">
+    <p class="card__title">${myBooks[i].title}</p>
             <p class="card__author"><b>Author:</b> ${myBooks[i].author}</p>
             <p class="card__pages"><b>Pages:</b> ${myBooks[i].pages}</p>
-            <p class="card__readStatus"><b>Read:</b> ${myBooks[i].readStatus}</p>`;
+            <p class="card__readStatus"><b>Read:</b> ${myBooks[i].readStatus}</p>
+            </div><button class="card__remove">
+              <i class="fa-solid fa-trash"></i>
+            </button>`;
     cardArea.appendChild(card);
+
+    const cardRemove = card.querySelector(".card__remove");
+    cardRemove.addEventListener("click", () => {
+      myBooks.splice(i, 1);
+      displayBooks();
+    });
   }
 }
 

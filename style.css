@@ -274,6 +274,27 @@ small {
   font-weight: 300;
 }
 
+.card__remove {
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  color: #c0424b;
+  margin-top: auto;
+  margin-left: auto;
+
+  transition: all 0.2s;
+}
+
+.card__remove:hover {
+  background-color: #d8d8d8;
+}
+
+.card-content {
+  margin-top: 30px;
+}
+
 /* ------------------------------------------------------------------------------------------ */
 .book-form-container {
   display: none;
